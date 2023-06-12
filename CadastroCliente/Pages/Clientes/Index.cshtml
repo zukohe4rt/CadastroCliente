@@ -1,0 +1,96 @@
+﻿@page
+@model CadastroCliente.Pages.Clientes.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Cliente[0].Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cliente[0].Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cliente[0].Sexo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cliente[0].Ddd)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cliente[0].Telefone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cliente[0].Endereco)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cliente[0].Cidade)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cliente[0].Estado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cliente[0].Bairro)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cliente[0].Login)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cliente[0].Senha)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Cliente) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sexo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ddd)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Telefone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Endereco)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cidade)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Estado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Bairro)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Login)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Senha)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
